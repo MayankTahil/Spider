@@ -12,13 +12,7 @@ from random import randint, random
 import sys
 import requests
 
-### Pre-req is to pip install requests. If you do not have pip and requests module installed do the following: 
-### $ sudo apt-get install python-pip python-dev build-essential 
-### $ sudo pip install --upgrade pip 
-### $ sudo pip install requests 
-
-
-# This code takes in a single CLI input where the only parameter is the file name/path of a csv list of all VIP websites to cawl.
+# Take in CLI input where the only parameter is the file name/path of a csv list of all VIP websites to cawl.
 # For example in the format:  http://<vip>:port/
 #
 #     http://172.16.0.11:8080,
@@ -34,7 +28,7 @@ import requests
 #     http://172.16.0.11:8090,
 #     http://172.16.0.11:8091,
 
-# Here is our spider. It takes in an URL,
+#Here is our spider. It takes in an URL, a word to find,
 # and the number of pages to search through before giving up
 def spider(url, maxPages):
     pagesToVisit = [url]
@@ -67,7 +61,6 @@ def spider(url, maxPages):
     #     print("The word", word, "was found at", url)
     # else:
     #     print("Word never found")
-	
 # We are going to create a class called LinkParser that inherits some
 # methods from HTMLParser which is why it is passed into the definition
 class LinkParser(HTMLParser):
@@ -90,7 +83,6 @@ class LinkParser(HTMLParser):
                     newUrl = parse.urljoin(self.baseUrl, value)
                     # And add it to our colection of links:
                     self.links = self.links + [newUrl]
-					
     # This is a new function that we are creating to get links
     # that our spider() function will call
     def getLinks(self, url):
@@ -115,3 +107,4 @@ if __name__ == "__main__":
         urls2seekDeep = randint(3, 20)
         vip = vipList[randint(1, numOfVips)-1][0]
         spider(vip, urls2seekDeep)
+
