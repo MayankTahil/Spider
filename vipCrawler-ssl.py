@@ -10,6 +10,7 @@ from time import sleep
 import csv
 from random import randint, random
 import sys
+import requests
 
 ### Pre-req is to pip install requests. If you do not have pip and requests module installed do the following: 
 ### $ sudo apt-get install python-pip python-dev build-essential 
