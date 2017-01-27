@@ -1,3 +1,16 @@
+#!/usr/bin/python3
+__author__      = "Mayank Tahilramani <mayank.tahilramani@citrix.com> Brian Tannous <brian.tannous@citrix.com>"
+__copyright__   = "Copyright 2017, Planet Earth"
+
+from html.parser import HTMLParser
+from urllib.request import urlopen
+from urllib import parse
+from random import random
+from time import sleep
+import csv
+from random import randint, random
+import sys
+
 ### Pre-req is to pip install requests. If you do not have pip and requests module installed do the following: 
 ### $ sudo apt-get install python-pip python-dev build-essential 
 ### $ sudo pip install --upgrade pip 
